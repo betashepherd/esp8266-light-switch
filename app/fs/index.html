@@ -1,0 +1,466 @@
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <style>
+        body, textarea, input, select {
+            background: 0;
+            border-radius: 0;
+            font: 16px sans-serif;
+            margin: 0
+        }
+
+        .smooth {
+            transition: all .2s
+        }
+
+        .btn, .nav a {
+            text-decoration: none
+        }
+
+        .container {
+            margin: 0 20px;
+            width: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        form > * {
+            display: block;
+            margin-bottom: 10px
+        }
+
+        .btn {
+            background: #999;
+            border-radius: 6px;
+            border: 0;
+            color: #fff;
+            cursor: pointer;
+            display: inline-block;
+            margin: 2px 0;
+            padding: 12px 30px 14px
+        }
+
+        .btn:hover {
+            background: #888
+        }
+
+        .btn:active, .btn:focus {
+            background: #777
+        }
+
+        .btn-a {
+            background: #0ae
+        }
+
+        .btn-a:hover {
+            background: #09d
+        }
+
+        .btn-a:active, .btn-a:focus {
+            background: #08b
+        }
+
+        .btn-b {
+            background: #3c5
+        }
+
+        .btn-b:hover {
+            background: #2b4
+        }
+
+        .btn-b:active, .btn-b:focus {
+            background: #2a4
+        }
+
+        .btn-c {
+            background: #d33
+        }
+
+        .btn-c:hover {
+            background: #c22
+        }
+
+        .btn-c:active, .btn-c:focus {
+            background: #b22
+        }
+
+        .btn-sm {
+            border-radius: 4px;
+            padding: 10px 14px 11px
+        }
+
+        .row {
+            /*margin: 1% 0;*/
+            /*overflow: auto;*/
+            display:flex;
+            align-items: center;
+            max-width: 480px;
+            padding: 10px 0px;
+        }
+
+        .col {
+            /*float: left;*/
+            /*display:flex;;*/
+            align-items: center;
+            /*justify-content: space-around;*/
+        }
+
+        .table, .c12 {
+            width: 100%
+        }
+
+        .c11 {
+            width: 91.66%
+        }
+
+        .c10 {
+            width: 83.33%
+        }
+
+        .c9 {
+            width: 75%
+        }
+
+        .c8 {
+            width: 66.66%
+        }
+
+        .c7 {
+            width: 58.33%
+        }
+
+        .c6 {
+            width: 50%
+        }
+
+        .c5 {
+            width: 41.66%
+        }
+
+        .c4 {
+            width: 33.33%;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .c3 {
+            width: 25%
+        }
+
+        .c2 {
+            width: 16.66%
+        }
+
+        .c1 {
+            width: 8.33%
+        }
+
+        h1 {
+            font-size: 3em
+        }
+
+        .btn, h2 {
+            font-size: 2em
+        }
+
+        .ico {
+            font: 33px Arial Unicode MS, Lucida Sans Unicode
+        }
+
+        .addon, .btn-sm, .nav, textarea, input, select {
+            outline: 0;
+            font-size: 14px
+        }
+
+        textarea, input, select {
+            padding: 8px;
+            border: 1px solid #ccc
+        }
+
+        textarea:focus, input:focus, select:focus {
+            border-color: #5ab
+        }
+
+        textarea, input[type=text] {
+            -webkit-appearance: none;
+            width: 13em
+        }
+
+        .addon {
+            padding: 8px 12px;
+            box-shadow: 0 0 0 1px #ccc
+        }
+
+        .nav, .nav .current, .nav a:hover {
+            background: #000;
+            color: #fff
+        }
+
+        .nav {
+            height: 24px;
+            padding: 11px 0 15px
+        }
+
+        .nav a {
+            color: #aaa;
+            padding-right: 1em;
+            position: relative;
+            top: -1px
+        }
+
+        .nav .pagename {
+            font-size: 22px;
+            top: 1px
+        }
+
+        .btn.btn-close {
+            background: #000;
+            float: right;
+            font-size: 25px;
+            margin: -54px 7px;
+            display: none
+        }
+
+        @media (min-width: 1310px) {
+            .container {
+                margin: auto;
+                width: 1270px
+            }
+        }
+
+        @media (max-width: 870px) {
+            .row .col {
+                width: 100%
+            }
+        }
+
+        @media (max-width: 500px) {
+            .btn.btn-close {
+                display: block
+            }
+
+            .nav {
+                overflow: hidden
+            }
+
+            .pagename {
+                margin-top: -11px
+            }
+
+            .nav:active, .nav:focus {
+                height: auto
+            }
+
+            .nav div:before {
+                background: #000;
+                border-bottom: 10px double;
+                border-top: 3px solid;
+                content: '';
+                float: right;
+                height: 4px;
+                position: relative;
+                right: 3px;
+                top: 14px;
+                width: 20px
+            }
+
+            .nav a {
+                padding: .5em 0;
+                display: block;
+                width: 50%
+            }
+        }
+
+        .table th, .table td {
+            padding: .5em;
+            text-align: left
+        }
+
+        .table tbody > :nth-child(2n-1) {
+            background: #ddd
+        }
+
+        .hero h1 {
+            margin-top: 0;
+            margin-bottom: 0.3em;
+        }
+
+        .c4 {
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .c4 h3 {
+            margin-top: 0;
+        }
+
+        .c4 a {
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        .form-control {
+            margin: 0.5em 0;
+        }
+
+        .form label {
+            min-width: 8em;
+            display: inline-block;
+        }
+
+        #result {
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            min-height: 7em;
+            white-space: pre;
+            padding: 0.5em;
+            overflow: auto;
+        }
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+            margin-left: 30px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+
+        input:focus + .slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<nav class="nav" tabindex="-1" onclick="this.focus()">
+    <div class="container">
+        <span class="pagename current">控制中心</span>
+    </div>
+</nav>
+<div class="container">
+
+    <div class="row">
+            <label><span>开关</span></label>
+            <label class="switch">
+                <input type="checkbox" id="mySwitch">
+                <span class="slider round"></span>
+            </label>
+    </div>
+
+    <div class="row form">
+        <!--<div class="col c4">-->
+            <!--<div class="form-control">-->
+                <!--<label for="ssid">WiFi</label>-->
+                <!--<input type="text" class="smooth" id="ssid" name="ssid" placeholder="WiFi">-->
+            <!--</div>-->
+            <!--<div class="form-control">-->
+                <!--<label for="pass">密码</label>-->
+                <!--<input type="text" class="smooth" id="pass" name="pass" placeholder="Password">-->
+            <!--</div>-->
+            <!--<div class="form-control">-->
+                <!--<button href="#" class="btn btn-sm btn-c" id="save">保存</button>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <div class="col c8">
+            <!-- <h3>Result:</h3> -->
+            <div id="result"></div>
+        </div>
+
+    </div>
+</div>
+
+<script src="/zepto.min.js"></script>
+<script>
+
+    var log = function (msg) {
+        $('<span/>').html(msg + '\n').appendTo('#result')
+    };
+
+    $.ajax({
+       url: 'http://' + window.location.host + ':8080/switch',
+       data: '----' + JSON.stringify({action: "get"}),
+       type: 'POST',
+       success: function (data) {
+           if (data.data.status === 'off') {
+               $('#mySwitch').prop("checked", false);
+           } else if (data.data.status === 'on') {
+               $('#mySwitch').prop("checked", true);
+           }
+       },
+   });
+    
+    $('#mySwitch').change(function () {
+        var value = '';
+        if ($('#mySwitch').is(":checked")) {
+            value = 'on';
+        } else {
+            value = 'off';
+        }
+        $.ajax({
+            url: 'http://' + window.location.host + ':8080/switch',
+            data: '----' + JSON.stringify({action: 'set', value: value}),
+            type: 'POST',
+            success: function (data) {
+                if (value === 'on') {
+                    log("Open ok!");
+                } else if (value === 'off') {
+                    log("Close ok!");
+                }
+            },
+        })
+    });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "device": {
+    "id": "esp8266_176305"
+  },
+  "sntp": {
+    "server": "jp.pool.ntp.org",
+    "update_interval": 600
+  },
+  "provision": {
+    "btn": {
+      "hold_ms": 5000
+    },
+    "stable_state": 0,
+    "max_state": 2
+  },
+  "wifi": {
+    "ap": {
+      "enable": true,
+      "ssid": "xswitch_??????",
+      "pass": "s123456790"
+    },
+    "sta": {
+      "enable": true,
+      "ssid": "light",
+      "pass": "123456"
+    }
+  }
+}
